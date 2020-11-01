@@ -1,0 +1,22 @@
+app:
+  topic-name: user-mail
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    initialization-mode: always
+    platform: postgres
+    url: jdbc:postgresql://db:5432/${POSTGRES_DB}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+
+  kafka:
+    bootstrap-servers: kafka:29092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      group-id: default
+      auto-offset-reset: earliest
