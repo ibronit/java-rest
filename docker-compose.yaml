@@ -8,6 +8,8 @@ services:
     command: mvn spring-boot:run
     ports:
       - 8080:8080
+    depends_on:
+      - db
     environment:
       POSTGRES_DB: rest-api
       POSTGRES_USER: rest-api

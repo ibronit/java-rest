@@ -1,5 +1,5 @@
 app:
-  topic-name: user-mail
+  topic-name: user-creation
 spring:
   jpa:
     hibernate:

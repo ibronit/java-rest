@@ -6,13 +6,13 @@ import org.springframework.data.rest.core.annotation.RepositoryEventHandler;
 import org.springframework.kafka.core.KafkaTemplate;
 
 @RepositoryEventHandler()
-public class UserListener {
+public class UserCreationListener {
 
     @Autowired
     private KafkaTemplate<String, Object> template;
 
     @HandleAfterCreate
     public void handlePersonSave(User user) {
-        template.send("user-mail", user);
+        template.send("user-creation", user);
     }
 }
