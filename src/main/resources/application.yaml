@@ -1,5 +1,5 @@
 app:
-  topic-name: user-creation
+  topic-name: user-registration
 spring:
   jpa:
     hibernate:
@@ -20,3 +20,20 @@ spring:
     consumer:
       group-id: default
       auto-offset-reset: earliest
+
+  mail:
+    host: mailhog
+    port: 1025
+    properties:
+      mail.smtp.auth: false
+      mail.smtp.starttls.enable: false
+    addresses:
+      from: no-reply@java-rest-api.com
+      replyTo: no-reply@java-rest-api.com
+
+  thymeleaf:
+    check-template-location: true
+    prefix: 'classpath:/templates/'
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8

@@ -1,0 +1,3 @@
+Hello [(${fullName})]!
+
+Thanks for registering!

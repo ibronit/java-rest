@@ -18,6 +18,6 @@ public class UserCreationListener {
     @HandleAfterCreate
     public void handleUserSave(User user) {
         logger.info("Handle after create listener triggered...");
-        template.send("user-creation", user);
+        template.send("user-registration", user); //TODO: refact hardcoded value
     }
 }
