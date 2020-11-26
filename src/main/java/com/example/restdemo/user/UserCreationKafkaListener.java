@@ -25,7 +25,7 @@ public class UserCreationKafkaListener {
         this.templateEngine = templateEngine;
     }
 
-    @KafkaListener(groupId = "default", topics = "user-registration") //TODO: refact hardcoded value
+    @KafkaListener(groupId = "default", topics = "user-creation")
     public void listenAsObject(ConsumerRecord<String, User> cr, @Payload User payload) {
         Context context = new Context();
         context.setVariable("fullName", String.format("%s %s", payload.getFirstName(), payload.getLastName()));

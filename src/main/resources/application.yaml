@@ -1,5 +1,8 @@
 app:
-  topic-name: user-registration
+  kafka:
+    topics:
+      user-creation:
+        name: user-creation
 spring:
   jpa:
     hibernate:
@@ -24,6 +27,7 @@ spring:
   mail:
     host: mailhog
     port: 1025
+    debug: true
     properties:
       mail.smtp.auth: false
       mail.smtp.starttls.enable: false

@@ -1,7 +1,6 @@
 package com.example.restdemo.user;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -42,10 +41,10 @@ public class User {
     }
 
     public User(
-            @JsonProperty("firstName") String firstName,
-            @JsonProperty("lastName") String lastName,
-            @JsonProperty("email") String email,
-            @JsonProperty("password") String password
+        @JsonProperty("firstName") String firstName,
+        @JsonProperty("lastName") String lastName,
+        @JsonProperty("email") String email,
+        @JsonProperty("password") String password
     ) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -91,9 +90,6 @@ public class User {
 
     @Override
     public String toString() {
-        return "PracticalAdvice::toString() {" +
-                "message='" + firstName + '\'' +
-                ", identifier=" + lastName +
-                '}';
+        return email;
     }
 }

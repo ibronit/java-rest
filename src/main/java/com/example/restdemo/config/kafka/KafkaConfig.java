@@ -30,10 +30,11 @@ public class KafkaConfig {
     public ConsumerFactory<String, Object> consumerFactory() {
         final JsonDeserializer<Object> jsonDeserializer = new JsonDeserializer<>();
         jsonDeserializer.addTrustedPackages("*");
+
         return new DefaultKafkaConsumerFactory<>(
-                kafkaProperties.buildConsumerProperties(),
-                new StringDeserializer(),
-                jsonDeserializer
+            kafkaProperties.buildConsumerProperties(),
+            new StringDeserializer(),
+            jsonDeserializer
         );
     }
 

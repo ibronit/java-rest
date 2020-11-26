@@ -8,16 +8,16 @@ import org.springframework.kafka.config.TopicBuilder;
 
 @Configuration
 public class UserCreationTopic {
-    @Value("${app.topic-name}")
+    @Value("${app.kafka.topics.user-creation.name}")
     private String topicName;
 
     @Bean
     public NewTopic createTopic() {
         return TopicBuilder
-                .name(this.topicName)
-                .replicas(1)
-                .partitions(1)
-                .replicas(1)
-                .build();
+            .name(this.topicName)
+            .replicas(1)
+            .partitions(1)
+            .replicas(1)
+            .build();
     }
 }
